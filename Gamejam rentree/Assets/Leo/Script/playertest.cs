@@ -10,7 +10,7 @@ public class playertest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             index++;
 
@@ -18,12 +18,12 @@ public class playertest : MonoBehaviour
             {
                 index = 0;
             }
-
+            transform.rotation = transform.rotation * Quaternion.Euler(new Vector3(0, 0, 60));
 
             Debug.Log(index);
         }
 
-        if(Input.GetKeyDown(KeyCode.D))
+        if(Input.GetKeyDown(KeyCode.Q))
         {
             index--;
 
@@ -31,7 +31,7 @@ public class playertest : MonoBehaviour
             { 
                 index = 5;
             }
-
+            transform.rotation = transform.rotation * Quaternion.Euler(new Vector3(0, 0, -60));
             Debug.Log(index);
         }
         
