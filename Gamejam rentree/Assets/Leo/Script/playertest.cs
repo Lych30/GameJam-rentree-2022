@@ -18,7 +18,7 @@ public class playertest : MonoBehaviour
             {
                 index = 0;
             }
-            transform.rotation = transform.rotation * Quaternion.Euler(new Vector3(0, 0, 60));
+            transform.rotation = transform.rotation * Quaternion.Euler(new Vector3(-60, 0,0));
 
             Debug.Log(index);
         }
@@ -31,7 +31,7 @@ public class playertest : MonoBehaviour
             { 
                 index = 5;
             }
-            transform.rotation = transform.rotation * Quaternion.Euler(new Vector3(0, 0, -60));
+            transform.rotation = transform.rotation * Quaternion.Euler(new Vector3(60,0,0));
             Debug.Log(index);
         }
         
