@@ -7,6 +7,8 @@ public class playertest : MonoBehaviour
     [SerializeField] private Transform[] points;
     Transform destination;
     [SerializeField] int index = 0;
+
+    [SerializeField] AudioClip[] clips;
     // Update is called once per frame
     void Update()
     {
@@ -18,9 +20,10 @@ public class playertest : MonoBehaviour
             {
                 index = 0;
             }
-            transform.rotation = transform.rotation * Quaternion.Euler(new Vector3(-60, 0,0));
+            transform.rotation = transform.rotation * Quaternion.Euler(new Vector3(0,-60,0));
+      
+            playRandomSwitchSound();
 
-            Debug.Log(index);
         }
 
         if(Input.GetKeyDown(KeyCode.Q))
@@ -31,15 +34,34 @@ public class playertest : MonoBehaviour
             { 
                 index = 5;
             }
-            transform.rotation = transform.rotation * Quaternion.Euler(new Vector3(60,0,0));
-            Debug.Log(index);
+            transform.rotation = transform.rotation * Quaternion.Euler(new Vector3(0,60,0));
+
+            playRandomSwitchSound();
         }
         
         AtoB(points[index]);
     }
     void AtoB(Transform destination)
     {
-        //transform.position = destination.position;
-        transform.position = Vector3.Lerp(transform.position, destination.position,10*Time.deltaTime);
+          transform.position = Vector3.Lerp(transform.position, destination.position,10*Time.deltaTime);
+    }
+    void playRandomSwitchSound()
+    {
+        int randomNb = Random.Range(0, 3);
+        switch (randomNb)
+        {
+            case 0:
+                SoundManager.Instance.Play(clips[3]);
+                break;
+            case 1:
+                SoundManager.Instance.Play(clips[4]);
+                break;
+            case 2:
+                SoundManager.Instance.Play(clips[5]);
+                break;
+            default:
+                SoundManager.Instance.Play(clips[3]);
+                break;
+        }
     }
 }
