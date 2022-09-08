@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerDeath : MonoBehaviour
 {
-    public bool isDead = false;
     public GameObject GameOverUI;
 
     public static PlayerDeath instance;
@@ -22,20 +21,13 @@ public class PlayerDeath : MonoBehaviour
     
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            Debug.Log("est mort");
-            PlayerMove.instance.canMove = false;
-            isDead = true;
+            Death();
         }
     }
 
-    void Update()
+    public void Death()
     {
-        if (isDead)
-        {
-            GameOverUI.SetActive(true);
-        } else
-        {
-            GameOverUI.SetActive(false);
-        }
+        PlayerMove.instance.canMove = false;
+        GameOverUI.SetActive(true);
     }
 }
