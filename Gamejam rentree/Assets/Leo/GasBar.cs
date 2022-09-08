@@ -20,14 +20,17 @@ public class GasBar : MonoBehaviour
     }
     void Update()
     {
-        if(DecreasingtimeLoss <= 0)
+        if (PlayerMove.instance.canMove)
         {
-            DecreasingtimeLoss = TimeBtwLoss;
-            LooseFuel(1);
-        }
-        else
-        {
-            DecreasingtimeLoss -= Time.deltaTime;
+            if(DecreasingtimeLoss <= 0)
+            {
+                DecreasingtimeLoss = TimeBtwLoss;
+                LooseFuel(1);
+            }
+            else
+            {
+                DecreasingtimeLoss -= Time.deltaTime;
+            }
         }
     }
     void LooseFuel(int amount)
