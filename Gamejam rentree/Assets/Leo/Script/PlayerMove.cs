@@ -33,7 +33,7 @@ public class PlayerMove : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
-            if(GasBar.Instance.FuelBar.value > SlowDownCost)
+            if(GasBar.Instance.FuelBar.value > SlowDownCost && SlowDownFactor != 2)
             {
                 GasBar.Instance.FuelBar.value -= SlowDownCost;
                 StartCoroutine(SlowDownCoroutine(SlowDownDuration));
