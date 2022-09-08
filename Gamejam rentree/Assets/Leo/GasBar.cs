@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class GasBar : MonoBehaviour
 {
     // Start is called before the first frame update
-    [HideInInspector]
-    public int Fuel;
 
     public Slider FuelBar;
 

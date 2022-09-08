@@ -473,9 +473,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda24234a0391fc4c90e1aac930aae36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fuel: 10
   FuelBar: {fileID: 526165511}
-  MaxFuel: 10
+  MaxFuel: 50
   TimeBtwLoss: 1
 --- !u!1 &473702094
 GameObject:
@@ -813,6 +812,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedMultiplier: 1
   canMove: 1
+  SlowDownCost: 10
+  SlowDownDuration: 5
 --- !u!4 &827972842
 Transform:
   m_ObjectHideFlags: 0
@@ -1824,6 +1825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverUI: {fileID: 1156280967}
+  Fuel_Gained: 10
 --- !u!54 &1874204561
 Rigidbody:
   m_ObjectHideFlags: 0

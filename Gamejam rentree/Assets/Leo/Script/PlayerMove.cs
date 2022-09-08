@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
     public float SpeedMultiplier = 1;
+    float SlowDownFactor = 1;
     public bool canMove = true;
+    public int SlowDownCost; 
+    public float SlowDownDuration; 
 
     public static PlayerMove instance;
 
@@ -25,8 +29,21 @@ public class PlayerMove : MonoBehaviour
         SpeedMultiplier += Time.deltaTime / 15;
         SpeedMultiplier = Mathf.Clamp(SpeedMultiplier, 1,5);
     
-        transform.position += new Vector3(0, 0, 1) * Time.deltaTime* 4 * SpeedMultiplier;
+        transform.position += new Vector3(0, 0, 1) * Time.deltaTime* 4 * SpeedMultiplier / SlowDownFactor;
         }
-
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            if(GasBar.Instance.FuelBar.value > SlowDownCost)
+            {
+                GasBar.Instance.FuelBar.value -= SlowDownCost;
+                StartCoroutine(SlowDownCoroutine(SlowDownDuration));
+            }
+        }
+    }
+    IEnumerator SlowDownCoroutine(float Time)
+    {
+        SlowDownFactor = 2;
+        yield return new WaitForSeconds(Time);
+        SlowDownFactor = 1;
     }
 }
