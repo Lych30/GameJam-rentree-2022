@@ -7,9 +7,8 @@ public class playertest : MonoBehaviour
     [SerializeField] private Transform[] points;
     Transform destination;
     [SerializeField] int index = 0;
-
     [SerializeField] AudioClip[] clips;
-    // Update is called once per frame
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.D))
@@ -21,9 +20,7 @@ public class playertest : MonoBehaviour
                 index = 0;
             }
             transform.rotation = transform.rotation * Quaternion.Euler(new Vector3(0,-60,0));
-      
             playRandomSwitchSound();
-
         }
 
         if(Input.GetKeyDown(KeyCode.Q))
@@ -43,7 +40,7 @@ public class playertest : MonoBehaviour
     }
     void AtoB(Transform destination)
     {
-          transform.position = Vector3.Lerp(transform.position, destination.position,10*Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, destination.position,5*Time.deltaTime);
     }
     void playRandomSwitchSound()
     {
