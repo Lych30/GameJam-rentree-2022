@@ -18,9 +18,12 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Scoring += Time.deltaTime * 100 * Multiplier;
-        Scoring = UnityEngine.Mathf.Round(Scoring);
-        UpdateScore();
+        if (PlayerMove.instance.canMove)
+        {
+            Scoring += Time.deltaTime * 100 * Multiplier;
+            Scoring = UnityEngine.Mathf.Round(Scoring);
+            UpdateScore();
+        }
     }
     void UpdateScore()
     {

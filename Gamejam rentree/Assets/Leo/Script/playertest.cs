@@ -11,7 +11,9 @@ public class playertest : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (PlayerMove.instance.canMove)
+        {
+            if (Input.GetKeyDown(KeyCode.D))
         {
             index++;
 
@@ -34,6 +36,7 @@ public class playertest : MonoBehaviour
             transform.rotation = transform.rotation * Quaternion.Euler(new Vector3(0,60,0));
 
             playRandomSwitchSound();
+        }
         }
         
         AtoB(points[index]);

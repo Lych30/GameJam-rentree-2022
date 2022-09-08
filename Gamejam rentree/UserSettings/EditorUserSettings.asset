@@ -6,18 +6,15 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
-      value: 0009550403065b0d550d5f2048760a4440154d7e297f20642e78186be6e3616d
+      value: 07570c070051080e0f590e7a147206444e151d7a7d2a7134757a4c35b6e4663c
       flags: 0
     RecentlyUsedSceneGuid-1:
-      value: 025407575550595a0f5b5e7311205b444f164d722e2a7164297b1964b0b4313e
+      value: 0009550403065b0d550d5f2048760a4440154d7e297f20642e78186be6e3616d
       flags: 0
     RecentlyUsedSceneGuid-2:
-      value: 5a08575f5207595a0f5d59741173094444164f7d7d2a23317c7a4465bbe1646d
-      flags: 0
-    RecentlyUsedSceneGuid-3:
       value: 0603555453055b08580f5d23497b0e44431641732f7c7e682e2c4a65b3e16661
       flags: 0
-    RecentlyUsedSceneGuid-4:
+    RecentlyUsedSceneGuid-3:
       value: 5b54000200565f02545c557541770f44434f4a2b787a7e327a7f1f60b7b83639
       flags: 0
     UnityEditor.ShaderGraph.Blackboard:
@@ -37,7 +34,7 @@ EditorUserSettings:
   m_VCDebugCmd: 0
   m_VCDebugOut: 0
   m_SemanticMergeMode: 2
-  m_DesiredImportWorkerCount: 2
+  m_DesiredImportWorkerCount: 3
   m_StandbyImportWorkerCount: 2
   m_IdleImportWorkerShutdownDelay: 60000
   m_VCShowFailedCheckout: 1
