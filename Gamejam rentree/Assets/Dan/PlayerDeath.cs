@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerDeath : MonoBehaviour
 {
@@ -8,10 +9,14 @@ public class PlayerDeath : MonoBehaviour
 
     [Range(1, 20)]
     public int Fuel_Gained;
+    public float time;
+    public float shieldCooldown;
+    public bool canShield = true;
     public static PlayerDeath Instance { get; private set; }
+    public bool hasShield = false;
     private void Awake()
     {
-        // If there is an instance, and it's not me, delete myself.
+        GameOverUI.SetActive(false);
 
         if (Instance != null && Instance != this)
         {
@@ -41,7 +46,34 @@ public class PlayerDeath : MonoBehaviour
 
     public void Death()
     {
-        PlayerMove.instance.canMove = false;
-        GameOverUI.SetActive(true);
+        if (!hasShield)
+        {
+            PlayerMove.instance.canMove = false;
+            GameOverUI.SetActive(true);
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.J) && PlayerMove.instance.canMove && canShield)
+        {
+            StartCoroutine(ShieldDuration(time));
+        }
+
+        if (GameOverUI.activeSelf && Input.anyKey)
+        {
+            SceneManager.LoadScene("FinalGame v2");
+        }
+    }
+
+    IEnumerator ShieldDuration(float time)
+    {
+        Debug.Log("shield");
+        hasShield = true;
+        canShield = false;
+        yield return new WaitForSeconds(time);
+        hasShield = false;
+        yield return new WaitForSeconds(shieldCooldown);
+        canShield = true;
     }
 }

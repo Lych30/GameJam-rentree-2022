@@ -27,7 +27,7 @@ public class PlayerMove : MonoBehaviour
         if (canMove)
         {
         SpeedMultiplier += Time.deltaTime / 15;
-        SpeedMultiplier = Mathf.Clamp(SpeedMultiplier, 1,5);
+        SpeedMultiplier = Mathf.Clamp(SpeedMultiplier, 1, 3);
     
         transform.position += new Vector3(0, 0, 1) * Time.deltaTime* 4 * SpeedMultiplier / SlowDownFactor;
         }

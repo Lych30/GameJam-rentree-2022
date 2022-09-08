@@ -48,7 +48,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 257.6
     y: 73.6
-    width: 345.99997
+    width: 378.80002
     height: 443
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -96,23 +96,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 345.99997
+      width: 378.80002
       height: 422
     m_Scale: {x: 0.47954544, y: 0.47954544}
-    m_Translation: {x: 172.99998, y: 211}
+    m_Translation: {x: 189.40001, y: 211}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -360.75827
+      x: -394.95737
       y: -440
-      width: 721.51654
+      width: 789.91473
       height: 880
     m_MinimalGUI: 1
   m_defaultScale: 0.47954544
-  m_LastWindowPixelSize: {x: 432.49997, y: 553.75}
+  m_LastWindowPixelSize: {x: 473.50003, y: 553.75}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -227,9 +227,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 28700000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 6879ffffe6caffff36fbffff8c7100008e720000
+      m_SelectedIDs: b28c0000
+      m_LastClickedID: 36018
+      m_ExpandedIDs: ea55faff8661faffc846fefff6bffeff24e1feff4410ffff4659ffff6879ffffe6caffff36fbffff8c7100008e720000828c0000968c0000b28c0000be8c0000188d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -245,7 +245,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 7}
+        m_ClientGUIView: {fileID: 5}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 257.6
     y: 0
-    width: 347.99997
+    width: 380.80002
     height: 464
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
@@ -294,9 +294,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 605.6
+    x: 638.4
     y: 0
-    width: 629.6
+    width: 596.7999
     height: 464
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
@@ -326,9 +326,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 605.60004
+    x: 638.4
     y: 73.6
-    width: 627.6
+    width: 594.7999
     height: 443
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -339,8 +339,8 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: -100, y: -25.600006}
+      snapOffset: {x: -100, y: -25.600006}
+      snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 3
       id: Tool Settings
       index: 0
@@ -361,7 +361,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 24.8}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-scene-view-toolbar
@@ -531,9 +531,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 639.19775, y: 567.084, z: -9.706827}
+    m_Target: {x: 458.88562, y: 1006.159, z: -0.9405285}
     speed: 2
-    m_Value: {x: 639.19775, y: 567.084, z: -9.706827}
+    m_Value: {x: 458.88562, y: 1006.159, z: -0.9405285}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -584,9 +584,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 645.4467
+    m_Target: 186.72687
     speed: 2
-    m_Value: 645.4467
+    m_Value: 186.72687
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -680,23 +680,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Dan
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Dan
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "C:\\Users\\danch\\Desktop\\Bureau\\Travail\\IIM 2e ann\xE9e\\Godther
     Jam\\GameJam-rentree-2022\\Gamejam rentree"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 66.20001}
-    m_SelectedIDs: 16700000
-    m_LastClickedID: 28694
-    m_ExpandedIDs: 00000000ea6f00001070000000ca9a3b
+    scrollPos: {x: 0, y: 50.200012}
+    m_SelectedIDs: 0e700000
+    m_LastClickedID: 28686
+    m_ExpandedIDs: 00000000ea6f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -724,7 +724,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ea6f0000
+    m_ExpandedIDs: 00000000ea6f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -749,9 +749,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 28700000
-    m_LastClickedInstanceID: 28712
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: b28c0000
+    m_LastClickedInstanceID: 36018
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -768,7 +768,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 10}
+      m_ClientGUIView: {fileID: 7}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
