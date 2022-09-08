@@ -6,10 +6,17 @@ using UnityEngine.UI;
 public class GasBar : MonoBehaviour
 {
     // Start is called before the first frame update
+    [HideInInspector]
     public int Fuel;
+
     public Slider FuelBar;
+
+    [Range(1, 50)]
     public int MaxFuel;
+
+    [Range(1, 5)]
     public float TimeBtwLoss;
+
     float DecreasingtimeLoss;
     public static GasBar instance;
 
@@ -31,9 +38,8 @@ public class GasBar : MonoBehaviour
 
     void Start()
     {
-        FuelBar.value = Fuel;
         FuelBar.maxValue = MaxFuel;
-
+        FuelBar.value = MaxFuel;
         DecreasingtimeLoss = TimeBtwLoss;
     }
     void Update()

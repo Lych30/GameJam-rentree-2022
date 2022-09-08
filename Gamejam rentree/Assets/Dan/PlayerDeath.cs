@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerDeath : MonoBehaviour
 {
     public GameObject GameOverUI;
+
+    [Range(1, 20)]
+    public int Fuel_Gained;
     public static PlayerDeath Instance { get; private set; }
     private void Awake()
     {
@@ -28,7 +31,7 @@ public class PlayerDeath : MonoBehaviour
                 Death();
                 break;
             case "Fuel":
-                GasBar.Instance.GainFuel(3);
+                GasBar.Instance.GainFuel(Fuel_Gained);
                 break;
             default:
                 break;
