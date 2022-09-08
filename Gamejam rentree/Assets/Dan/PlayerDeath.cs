@@ -9,10 +9,10 @@ public class PlayerDeath : MonoBehaviour
     
     
 
-    private void OnTriggerEnter(Collider collision)
+    void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("est mort");
-        if (collision.gameObject.CompareTag("Player"))
+   
+        if (collision.gameObject.CompareTag("Obstacle"))
         {
             Debug.Log("est mort");
             PlayerMove.instance.canMove = false;

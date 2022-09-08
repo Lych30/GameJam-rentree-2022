@@ -19,12 +19,12 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-<<<<<<< Updated upstream
+
         SpeedMultiplier += Time.deltaTime / 15;
         SpeedMultiplier = Mathf.Clamp(SpeedMultiplier, 1,5);
        
         transform.position += new Vector3(0, 0, 1) * Time.deltaTime*4 * SpeedMultiplier;
-=======
+
         if (canMove)
         {
             SpeedMultiplier += Time.deltaTime / 10;
@@ -32,6 +32,6 @@ public class PlayerMove : MonoBehaviour
 
             transform.position += new Vector3(0, 0, 1) * Time.deltaTime*4 * SpeedMultiplier;
         }
->>>>>>> Stashed changes
+
     }
 }
