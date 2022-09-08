@@ -7,6 +7,16 @@ public class PlayerDeath : MonoBehaviour
     public bool isDead = false;
     public GameObject GameOverUI;
 
+    public static PlayerDeath instance;
+
+    void Awake()
+    {
+        if (instance != null && instance != this)
+            Destroy(gameObject);
+
+        instance = this;
+    }
+
     void OnTriggerEnter(Collider collision)
     {
     
