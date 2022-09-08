@@ -38,7 +38,7 @@ public class GasBar : MonoBehaviour
         FuelBar.value -= amount;
         if(FuelBar.value <= 0)
         {
-            Debug.Log("Stop");
+            PlayerDeath.Instance.Death();
         }
     }
     void GainFuel(int amount)
