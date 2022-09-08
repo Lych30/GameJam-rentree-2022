@@ -6,7 +6,7 @@ public class ObjectPool : MonoBehaviour
 {
     public static ObjectPool instance;
 
-    [SerializeField] private List<GameObject> pooledObjects = new List<GameObject>();
+    [SerializeField] public List<GameObject> pooledObjects = new List<GameObject>();
 
     public List<GameObject> modulePrefab;
 
@@ -29,11 +29,12 @@ public class ObjectPool : MonoBehaviour
 
     public GameObject GetPooledObject()
     {
-        GameObject randomModule = pooledObjects[Random.Range(0, pooledObjects.Count)];
-
-        if (!randomModule.activeInHierarchy)
+        for (int i = 0; i < pooledObjects.Count; i++)
         {
-            return randomModule;
+            if (!pooledObjects[i].activeInHierarchy)
+            {
+                return pooledObjects[i];
+            }
         }
 
         return null;

@@ -25,8 +25,10 @@ public class PoolingGenerator : MonoBehaviour
                     moduleNotUsed = true;
                 }
             }
+            
             usedModule.Add(actualModule);
             GameObject moduleCharged = Instantiate(actualModule);
+            ObjectPool.instance.pooledObjects.Add(moduleCharged);
             moduleCharged.transform.position = loadingPosition.position;
             loadingPosition.transform.position = loadingPosition.transform.position + new Vector3(0, 0, 42f);
             ObjectPool.instance.modulePrefab.Add(moduleCharged);
