@@ -1825,7 +1825,7 @@ MonoBehaviour:
   GameOverUI: {fileID: 1156280967}
   Fuel_Gained: 10
   time: 3
-  shieldCooldown: 0
+  shieldCooldown: 8
   canShield: 1
   hasShield: 0
 --- !u!54 &1874204561
