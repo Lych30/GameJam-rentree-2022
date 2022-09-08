@@ -11,6 +11,24 @@ public class GasBar : MonoBehaviour
     public int MaxFuel;
     public float TimeBtwLoss;
     float DecreasingtimeLoss;
+    public static GasBar instance;
+
+
+    public static GasBar Instance { get; private set; }
+    private void Awake()
+    {
+        // If there is an instance, and it's not me, delete myself.
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
     void Start()
     {
         FuelBar.value = Fuel;
@@ -41,7 +59,7 @@ public class GasBar : MonoBehaviour
             PlayerDeath.Instance.Death();
         }
     }
-    void GainFuel(int amount)
+    public void GainFuel(int amount)
     {
         FuelBar.value += amount;
      

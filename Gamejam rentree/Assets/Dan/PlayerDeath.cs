@@ -22,9 +22,16 @@ public class PlayerDeath : MonoBehaviour
     void OnTriggerEnter(Collider collision)
     {
     
-        if (collision.gameObject.CompareTag("Obstacle"))
+        switch (collision.tag)
         {
-            Death();
+            case "Obstacle":
+                Death();
+                break;
+            case "Fuel":
+                GasBar.Instance.GainFuel(3);
+                break;
+            default:
+                break;
         }
     }
 
