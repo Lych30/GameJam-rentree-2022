@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerDeath : MonoBehaviour
 {
     public GameObject GameOverUI;
-
+    public GameObject Explosion;
     [Range(1, 20)]
     public int Fuel_Gained;
     public float time;
@@ -27,6 +27,8 @@ public class PlayerDeath : MonoBehaviour
             Instance = this;
         }
     }
+
+
     void OnTriggerEnter(Collider collision)
     {
     
@@ -48,10 +50,16 @@ public class PlayerDeath : MonoBehaviour
     {
         if (!hasShield)
         {
+            Explosion.SetActive(true);
+            GetComponent<MeshRenderer>().enabled = false;
+            SoundManager.Instance.Play(GetComponent<playertest>().clips[0]);
+            SoundManager.Instance.Play(GetComponent<playertest>().clips[6]);
+            hasShield = true;
             PlayerMove.instance.canMove = false;
             GameOverUI.SetActive(true);
         }
     }
+
 
     void Update()
     {
@@ -68,12 +76,13 @@ public class PlayerDeath : MonoBehaviour
 
     IEnumerator ShieldDuration(float time)
     {
-        Debug.Log("shield");
+        SoundManager.Instance.Play(GetComponent<playertest>().clips[5]);
         hasShield = true;
         canShield = false;
         yield return new WaitForSeconds(time);
         hasShield = false;
         yield return new WaitForSeconds(shieldCooldown);
         canShield = true;
+        SoundManager.Instance.Play(GetComponent<playertest>().clips[6]);
     }
 }

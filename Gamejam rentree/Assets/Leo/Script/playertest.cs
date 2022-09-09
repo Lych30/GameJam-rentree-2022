@@ -7,7 +7,7 @@ public class playertest : MonoBehaviour
     [SerializeField] private Transform[] points;
     Transform destination;
     [SerializeField] int index = 0;
-    [SerializeField] AudioClip[] clips;
+    public AudioClip[] clips;
 
     void Update()
     {

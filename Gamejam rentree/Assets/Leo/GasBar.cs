@@ -54,6 +54,12 @@ public class GasBar : MonoBehaviour
                 DecreasingtimeLoss -= Time.deltaTime;
             }
         }
+
+        if(FuelBar.value == FuelBar.value / 5)
+        {
+            SoundManager.Instance.Play(GameObject.Find("Rocket02").GetComponent<playertest>().clips[1]);
+           
+        }
     }
     void LooseFuel(int amount)
     {
