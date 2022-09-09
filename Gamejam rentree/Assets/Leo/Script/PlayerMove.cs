@@ -10,7 +10,9 @@ public class PlayerMove : MonoBehaviour
     float SlowDownFactor = 1;
     public bool canMove = true;
     public int SlowDownCost; 
-    public float SlowDownDuration; 
+    public float SlowDownDuration;
+
+    public GameObject SlowDownUI;
 
     public static PlayerMove instance;
 
@@ -43,8 +45,10 @@ public class PlayerMove : MonoBehaviour
     }
     IEnumerator SlowDownCoroutine(float Time)
     {
+        SlowDownUI.SetActive(false);
         SlowDownFactor = 2;
         yield return new WaitForSeconds(Time);
         SlowDownFactor = 1;
+        SlowDownUI.SetActive(true);
     }
 }
