@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerMove : MonoBehaviour
 {
     public float SpeedMultiplier = 1;
+    public float LevelSpeedMultiplier = 1;
     float SlowDownFactor = 1;
     public bool canMove = true;
     public int SlowDownCost; 
@@ -29,7 +30,7 @@ public class PlayerMove : MonoBehaviour
         SpeedMultiplier += Time.deltaTime / 15;
         SpeedMultiplier = Mathf.Clamp(SpeedMultiplier, 1, 3);
     
-        transform.position += new Vector3(0, 0, 1) * Time.deltaTime* 4 * SpeedMultiplier / SlowDownFactor;
+        transform.position += new Vector3(0, 0, 1) * Time.deltaTime* 4 * SpeedMultiplier / SlowDownFactor * LevelSpeedMultiplier;
         }
         if (Input.GetKeyDown(KeyCode.L))
         {

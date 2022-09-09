@@ -8,12 +8,15 @@ public class ObjectPool : MonoBehaviour
 
     public List<GameObject> pooledObjects = new List<GameObject>();
 
-    float rythmChangePos = 29.9f;
-    float varRythm = 42f;
+    [SerializeField] float rythmChangePos = 29.9f;
+    [SerializeField] float varRythm = 42f;
 
     public List<GameObject> modulePrefab;
 
+    [SerializeField] bool rythmCanChange = true;
+
     GameObject player;
+    PlayerMove playerMove;
 
     private void Awake()
     {
@@ -31,6 +34,7 @@ public class ObjectPool : MonoBehaviour
         }
 
         player = GameObject.FindGameObjectWithTag("Player");
+        playerMove = player.GetComponentInParent<PlayerMove>();
     }
     // Start is called before the first frame update
 
@@ -49,10 +53,17 @@ public class ObjectPool : MonoBehaviour
 
     void Update()
     {
-        rythmChangePos += (varRythm * Random.Range(3, 6));
-        if(player.transform.position.z == rythmChangePos)
+        if (rythmCanChange)
         {
+            rythmChangePos += (varRythm * Random.Range(3, 6));
+            rythmCanChange = false;
 
         }
-    }
+        if ((int)player.transform.position.z == (int)rythmChangePos)
+        {
+            playerMove.LevelSpeedMultiplier = Random.Range(0.5f, 1.5f);
+            rythmCanChange = true;
+        }
+
+    }   
 }
