@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerDeath : MonoBehaviour
 {
     public GameObject GameOverUI;
+    public GameObject ShieldUI;
     public GameObject Explosion;
     public GameObject Shield;
     [Range(1, 20)]
@@ -79,10 +81,12 @@ public class PlayerDeath : MonoBehaviour
         {
             SceneManager.LoadScene("FinalGame v2");
         }
+        
     }
 
     IEnumerator ShieldDuration(float time)
     {
+        ShieldUI.SetActive(false);
         SoundManager.Instance.Play(GetComponent<playertest>().clips[5]);
         Shield.SetActive(true);
         hasShield = true;
@@ -91,6 +95,7 @@ public class PlayerDeath : MonoBehaviour
         hasShield = false;
         Shield.SetActive(false);
         yield return new WaitForSeconds(shieldCooldown);
+        ShieldUI.SetActive(true);
         canShield = true;
         SoundManager.Instance.Play(GetComponent<playertest>().clips[6]);
     }
