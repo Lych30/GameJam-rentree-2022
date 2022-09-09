@@ -7,6 +7,7 @@ public class PlayerDeath : MonoBehaviour
 {
     public GameObject GameOverUI;
     public GameObject Explosion;
+    public GameObject Shield;
     [Range(1, 20)]
     public int Fuel_Gained;
     public float time;
@@ -39,6 +40,7 @@ public class PlayerDeath : MonoBehaviour
                 break;
             case "Fuel":
                 GasBar.Instance.GainFuel(Fuel_Gained);
+                StartCoroutine(deactivateFuel(collision.gameObject));
                 break;
             default:
                 break;
@@ -53,10 +55,15 @@ public class PlayerDeath : MonoBehaviour
             Explosion.SetActive(true);
             GetComponent<MeshRenderer>().enabled = false;
             SoundManager.Instance.Play(GetComponent<playertest>().clips[0]);
-            SoundManager.Instance.Play(GetComponent<playertest>().clips[6]);
+            
             hasShield = true;
             PlayerMove.instance.canMove = false;
             GameOverUI.SetActive(true);
+        }
+        else
+        {
+            Shield.SetActive(false);
+            SoundManager.Instance.Play(GetComponent<playertest>().clips[6]);
         }
     }
 
@@ -77,12 +84,20 @@ public class PlayerDeath : MonoBehaviour
     IEnumerator ShieldDuration(float time)
     {
         SoundManager.Instance.Play(GetComponent<playertest>().clips[5]);
+        Shield.SetActive(true);
         hasShield = true;
         canShield = false;
         yield return new WaitForSeconds(time);
         hasShield = false;
+        Shield.SetActive(false);
         yield return new WaitForSeconds(shieldCooldown);
         canShield = true;
         SoundManager.Instance.Play(GetComponent<playertest>().clips[6]);
+    }
+    IEnumerator deactivateFuel(GameObject Fuel)
+    {
+        Fuel.SetActive(false);
+        yield return new WaitForSeconds(1);
+        Fuel.SetActive(true);
     }
 }
